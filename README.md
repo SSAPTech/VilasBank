@@ -35,7 +35,7 @@
 
 ## 🌐 Live Demo
 
-👉 Visit: [https://vilasbank.netlify.app](https://vilasbank.netlify.app)
+👉 Visit: https://vilasbank.co.in/
 
 *(Hosted via Netlify – built for fast and lightweight performance)*
 
