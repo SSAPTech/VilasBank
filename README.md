@@ -1,4 +1,4 @@
-# 🏦 VilasBank – Gramin Digital Banking Platform
+# 🏦 विलास को-ऑपरेटिव्ह बँक लि.लातूर
 
 > A modern, user-centric digital banking solution tailored for rural and semi-urban India. Built to be simple, accessible, and powerful for communities that need it most.
 
@@ -37,7 +37,7 @@
 
 👉 Visit: https://vilasbank.co.in/
 
-*(Hosted via Netlify – built for fast and lightweight performance)*
+
 
 ---
 
