@@ -58,3 +58,4 @@ function resetAutoSlide() {
   clearInterval(autoSlide);
   autoSlide = setInterval(showNextSlide, 4000);
 }
+
