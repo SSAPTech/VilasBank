@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EMI Calculator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    label {
+      margin: 12px 0 4px;
+      display: block;
+      font-weight: 600;
+      color: #444;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 25px;
+      font-size: 18px;
+      text-align: center;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>EMI Calculator</h2>
+
+    <label for="amount">Loan Amount (₹)</label>
+    <input type="number" id="amount" placeholder="e.g. 500000" />
+
+    <label for="rate">Annual Interest Rate (%)</label>
+    <input type="number" id="rate" step="0.01" placeholder="e.g. 8.5" />
+
+    <label for="months">Loan Tenure (Months)</label>
+    <input type="number" id="months" placeholder="e.g. 60" />
+
+    <button onclick="calculateEMI()">Calculate EMI</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function formatCurrency(amount) {
+      return '₹' + amount.toLocaleString('en-IN', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function calculateEMI() {
+      const P = parseFloat(document.getElementById("amount").value);
+      const rate = parseFloat(document.getElementById("rate").value);
+      const N = parseInt(document.getElementById("months").value);
+
+      if (isNaN(P) || isNaN(rate) || isNaN(N) || P <= 0 || rate < 0 || N <= 0) {
+        document.getElementById("result").innerText = "Please enter valid input values.";
+        return;
+      }
+
+      const R = rate / (12 * 100); // monthly interest rate
+
+      let emi = 0;
+      if (R === 0) {
+        emi = P / N;
+      } else {
+        emi = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+      }
+
+      const formattedEMI = formatCurrency(emi);
+      document.getElementById("result").innerText = `Your Monthly EMI is ${formattedEMI}`;
+    }
+  </script>
+
+</body>
+</html>
