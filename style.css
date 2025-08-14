@@ -777,63 +777,68 @@ header {
     grid-template-columns: 1fr 1fr;
   }
 }
-/* About Us Page Specific Styles */
 .address-section, .info-section {
   display: flex;
   justify-content: center;
-  margin: 30px auto;
-  padding: 0 20px;
+  margin: 25px auto;
+  padding: 0 10px;
 }
 
 .address-container, .info-container {
-  background: linear-gradient(135deg, #ffffff, #f8f9ff);
-  border: 2px solid #e3edf7;
-  border-radius: 15px;
-  padding: 25px;
+  background: linear-gradient(135deg, #ffffff, #f9fcff); 
+  border: 1px solid #d9e4f5;
+  border-radius: 12px;
+  padding: 18px 20px;
   width: 100%;
-  max-width: 800px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  max-width: 650px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
 }
 
 .address-container:hover, .info-container:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+  border-color: #24aefb; /* uses your logo blue */
 }
 
 .address-label, .info-label {
   display: flex;
   align-items: center;
-  font-size: clamp(1.1rem, 3vw, 1.3rem);
-  font-weight: 700;
-  margin-bottom: 15px;
-  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1a2c3d;
+  letter-spacing: 0.5px;
 }
 
 .address-label i, .info-label i {
-  margin-right: 12px;
-  color: #007bff;
-  font-size: 1.4rem;
-  width: 24px;
+  margin-right: 10px;
+  background: linear-gradient(45deg, #44e326, #24aefb); /* logo gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.25rem;
+  width: 22px;
   text-align: center;
 }
 
 .address-box, .info-box {
   background: #ffffff;
-  border: 1px solid #dee2e6;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  color: #495057;
-  line-height: 1.6;
-  box-shadow: inset 0 2px 8px rgba(0,0,0,0.03);
-  transition: all 0.3s ease;
+  border: 1px solid #e3eaf0;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 0.96rem;
+  color: #333;
+  line-height: 1.5;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+  transition: all 0.25s ease;
 }
 
 .address-box:hover, .info-box:hover {
-  background: #f0f8ff;
-  border-color: #007bff;
+  background: #f1fbff;
+  border-color: #44e326; /* logo green */
 }
+
 
 /* Map Section */
 .map-section {
@@ -873,6 +878,51 @@ header {
   border: none;
   display: block;
 }
+.member-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Poppins', 'Arial', sans-serif;
+  background: #f8fff8;
+  box-shadow: 0 0 10px #eeeeee;
+}
+
+.member-table th, .member-table td {
+  border: 1px solid #24aefb;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.member-table thead th {
+  background: linear-gradient(90deg, #44e326 60%, #24aefb 100%);
+  color: white;
+  font-size: 1.08em;
+  letter-spacing: 1px;
+}
+
+.member-table tbody tr:nth-child(even) {
+  background-color: #e5f6ff;
+}
+
+.member-table tbody tr:nth-child(odd) {
+  background-color: #f2ffed;
+}
+
+.member-table td {
+  color: #222;
+}
+
+.member-table tr:hover {
+  background-color: #caffd0;
+  transition: background 0.2s;
+}
+.member-table {
+  width: 90%;
+  margin: 40px auto 24px auto;   /* Adds 40px space above, 24px below, centers horizontally */
+  border-collapse: collapse;
+  font-family: 'Poppins', 'Arial', sans-serif;
+  background: #f8fff8;
+  box-shadow: 0 0 10px #eeeeee;
+}
 
 /* Mobile responsive for About Us */
 @media (max-width: 768px) {
@@ -903,6 +953,9 @@ header {
     height: 250px;
   }
 }
+
+
+
 /* Career Page Specific Styles */
 .career-container {
   max-width: 1000px;
