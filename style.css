@@ -1490,6 +1490,7 @@ header {
   border-left: 4px solid #007bff;
   text-decoration: none;
   color: inherit;
+  overflow: hidden;
 }
 
 .notice-item:hover {
@@ -1499,9 +1500,11 @@ header {
 }
 
 .notice-item img {
+  display: block;
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  max-width: 85%;
+  height: auto;
+  margin: 0 auto 15px auto;
   border-radius: 8px;
   margin-bottom: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -1539,7 +1542,7 @@ header {
   }
   
   .notice-item img {
-    height: 180px;
+    height: auto;
   }
   
   .container h1 {
@@ -1558,7 +1561,7 @@ header {
   }
   
   .notice-item img {
-    height: 160px;
+    height: auto;
   }
   
   .container h1 {
